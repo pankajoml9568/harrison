@@ -112,11 +112,9 @@
                             <?php echo csrf_field(); ?>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " name="first_name" type="text" id="first-name"
+                                    <input class="form-control " name="first_name" type="text" id="first-name"
                                         placeholder="<?php echo e(__('First Name *')); ?>" value="<?php echo e(old('first_name')); ?>" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your first name.
-                                        </span>
+                                        
                                     <?php $__errorArgs = ['first_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -131,7 +129,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " name="last_name" type="text" id="last-name"
+                                    <input class="form-control " name="last_name" type="text" id="last-name"
                                         placeholder="<?php echo e(__('Last Name *')); ?>" value="<?php echo e(old('last_name')); ?>">
                                     <?php $__errorArgs = ['last_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -147,11 +145,9 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="email" name="email" id="contact-email"
+                                    <input class="form-control " type="email" name="email" id="contact-email"
                                         placeholder="<?php echo e(__('E-mail *')); ?>" value="<?php echo e(old('email')); ?>" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your E-mail address.
-                                        </span>
+                                        
                                     <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -166,11 +162,9 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="phone" id="contact-tel"
+                                    <input class="form-control " type="text" name="phone" id="contact-tel"
                                         placeholder="<?php echo e(__('Phone *')); ?>" value="<?php echo e(old('phone')); ?>" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your Phone number.
-                                        </span>
+                                        
                                     <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -186,11 +180,9 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="state" id="contact-state"
+                                    <input class="form-control " type="text" name="state" id="contact-state"
                                         placeholder="<?php echo e(__('State *')); ?>" value="<?php echo e(old('state')); ?>" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your State.
-                                        </span>
+                                        
                                     <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -206,11 +198,9 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="city" id="contact-city"
+                                    <input class="form-control " type="text" name="city" id="contact-city"
                                         placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your City.
-                                        </span>
+                                        
                                     <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -226,14 +216,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="medium-input bg-white" rows="5" name="address" id="address-text"
+                                    <textarea class="form-control" rows="5" name="address" id="address-text"
                                         placeholder="<?php echo e(__('Your address...')); ?>"><?php echo e(old('address')); ?></textarea>
                                     <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -244,14 +234,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="medium-input bg-white" rows="5" name="message" id="message-text"
+                                    <textarea class="form-control" rows="5" name="message" id="message-text"
                                         placeholder="<?php echo e(__('Write your message here...')); ?>"><?php echo e(old('message')); ?></textarea>
                                     <?php $__errorArgs = ['message'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;

@@ -46,11 +46,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12">
-                <form id="project-contact-form" method="Post" action="<?php echo e(route('front.contact.submit')); ?>" novalidate="">
+                <form id="project-contact-form" class="needs-validation" method="Post" action="<?php echo e(route('front.contact.submit')); ?>" novalidate>
                     <?php echo csrf_field(); ?>
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                            <input class="medium-input bg-white margin-25px-bottom required" name="name" type="text" id="name" placeholder="<?php echo e(__('Your Name')); ?>"  value="<?php echo e(old('name')); ?>">
+                            <input class="form-control margin-25px-bottom" name="name" type="text" id="name" placeholder="<?php echo e(__('Your Name')); ?>"  value="<?php echo e(old('name')); ?>" required>
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -61,7 +61,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            <input class="medium-input bg-white margin-25px-bottom required" type="email" name="email" id="contact-email" placeholder="<?php echo e(__('Your E-mail address')); ?>"  value="<?php echo e(old('email')); ?>">
+                            <input class="form-control margin-25px-bottom" type="email" name="email" id="contact-email" placeholder="<?php echo e(__('Your E-mail address')); ?>"  value="<?php echo e(old('email')); ?>" required>
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -72,7 +72,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            <input class="medium-input bg-white mb-0" type="text" name="phone" id="contact-tel" placeholder="<?php echo e(__('Your Mobile')); ?>"  value="<?php echo e(old('phone')); ?>">
+                            <input class="form-control mb-0" type="text" name="phone" id="contact-tel" placeholder="<?php echo e(__('Your Mobile')); ?>"  value="<?php echo e(old('phone')); ?>" required>
                             <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -85,7 +85,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="col margin-4-rem-bottom sm-margin-20px-bottom">
-                            <textarea class="medium-textarea bg-white h-200px" rows="6" name="comment" placeholder="<?php echo e(__('Write your message here...')); ?>"><?php echo e(old('message')); ?></textarea>
+                            <textarea class="form-control medium-textarea bg-white h-200px" rows="6" name="comment" placeholder="<?php echo e(__('Write your message here...')); ?>"><?php echo e(old('message')); ?></textarea>
                             <?php $__errorArgs = ['message'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -113,7 +113,7 @@ unset($__errorArgs, $__bag); ?>
                         <?php endif; ?>
 
                         <div class="col text-left sm-margin-20px-bottom">
-                            <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-10px-right margin-5px-top required">
+                            <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-10px-right margin-5px-top required" required>
                             <label for="terms_condition" class="text-small d-inline-block align-top w-85 md-w-90 xs-w-85">I accept the terms &amp; conditions and I understand that my data will be hold securely in accordance with the <a href="privacy.html" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                         </div>
                         <div class="col text-center text-md-right">
