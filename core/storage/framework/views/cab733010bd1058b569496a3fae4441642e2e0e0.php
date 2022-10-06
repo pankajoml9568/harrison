@@ -139,7 +139,7 @@
                                     aria-hidden="true"></i>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="dropdown"><a href="<?php echo e(route('awards')); ?>">Award</a></li>
-                                    <li class="dropdown"><a href="<?php echo e(route('newsMedia')); ?>">News & Media</a></li>
+                                    <li class="dropdown"><a href="#">News & Media</a></li>
                                 </ul>
                             </li>
 
