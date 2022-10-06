@@ -191,7 +191,7 @@ Corporate Overview
                     </div>
 
                     <div class="col-lg-12 text-center">
-                        <a href="our-client.php" class="btn btn-small btn-dark-gray uppercase mt50">View All</a>
+                        <a href="<?php echo e(route('ourClient')); ?>" class="btn btn-small btn-dark-gray uppercase mt50">View All</a>
                     </div>
                 </div>        
        

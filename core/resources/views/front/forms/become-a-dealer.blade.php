@@ -108,21 +108,24 @@
                     </div>
                     <div class="col-12">
                         <!-- start contact form -->
-                        <form class="row mt-2" method="Post" action="{{route('form.become-a-dealer.save')}}">
+                        <form class="row mt-2 needs-validation" method="Post" action="{{route('form.become-a-dealer.save')}}" novalidate>
                             @csrf
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" name="first_name" type="text" id="first-name"
-                                        placeholder="{{__('First Name')}}" value="{{ old('first_name') }}">
+                                    <input class="medium-input bg-white " name="first_name" type="text" id="first-name"
+                                        placeholder="{{__('First Name *')}}" value="{{ old('first_name') }}" required>
+                                        <span class="invalid-feedback">
+                                            Please enter your first name.
+                                        </span>
                                     @error('first_name')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" name="last_name" type="text" id="last-name"
-                                        placeholder="{{__('Last Name')}}" value="{{ old('last_name') }}">
+                                    <input class="medium-input bg-white " name="last_name" type="text" id="last-name"
+                                        placeholder="{{__('Last Name *')}}" value="{{ old('last_name') }}">
                                     @error('last_name')
                                     <p class="text-danger">{{$message}}</p>
                                     @enderror
@@ -130,39 +133,51 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" type="email" name="email" id="contact-email"
-                                        placeholder="{{__('E-mail')}}" value="{{ old('email') }}">
+                                    <input class="medium-input bg-white " type="email" name="email" id="contact-email"
+                                        placeholder="{{__('E-mail *')}}" value="{{ old('email') }}" required>
+                                        <span class="invalid-feedback">
+                                            Please enter your E-mail address.
+                                        </span>
                                     @error('email')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" type="text" name="phone" id="contact-tel"
-                                        placeholder="{{__('Phone')}}" value="{{ old('phone') }}">
+                                    <input class="medium-input bg-white " type="text" name="phone" id="contact-tel"
+                                        placeholder="{{__('Phone *')}}" value="{{ old('phone') }}" required>
+                                        <span class="invalid-feedback">
+                                            Please enter your Phone number.
+                                        </span>
                                     @error('phone')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" type="text" name="state" id="contact-state"
-                                        placeholder="{{__('State')}}" value="{{ old('state') }}">
+                                    <input class="medium-input bg-white " type="text" name="state" id="contact-state"
+                                        placeholder="{{__('State *')}}" value="{{ old('state') }}" required>
+                                        <span class="invalid-feedback">
+                                            Please enter your State.
+                                        </span>
                                     @error('state')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white required" type="text" name="city" id="contact-city"
-                                        placeholder="{{__('City')}}" value="{{ old('city') }}">
+                                    <input class="medium-input bg-white " type="text" name="city" id="contact-city"
+                                        placeholder="{{__('City')}}" value="{{ old('city') }}" required>
+                                        <span class="invalid-feedback">
+                                            Please enter your City.
+                                        </span>
                                     @error('city')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
