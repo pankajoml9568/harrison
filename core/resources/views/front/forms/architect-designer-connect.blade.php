@@ -38,38 +38,38 @@
             </div>
             <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="bg-white box-shadow-large border-radius-6px padding-3-rem-tb padding-3-rem-lr sm-padding-5-rem-all xs-padding-3-half-rem-lr xs-padding-6-rem-tb xs-no-border-radius">
-                    <form id="project-contact-form" method="Post" action="{{route('form.architect-designer-connect.save')}}">
+                    <form id="project-contact-form" class="needs-validation" method="Post" action="{{route('form.architect-designer-connect.save')}}" novalidate>
                     @csrf
                         <!-- <div class="row row-cols-1 row-cols-md-2"> -->
                         <div class="">
                             <!-- <div class="col margin-4-rem-bottom sm-margin-25px-bottom"> -->
-                                <input class="medium-input bg-white required" name="name" type="text" id="name"
-                            placeholder="{{__('Your Name')}}" value="{{ old('name') }}">
+                                <input class="form-control medium-input bg-white required" name="name" type="text" id="name"
+                            placeholder="{{__('Your Name *')}}" value="{{ old('name') }}" required>
                             @error('name')
                                 <p class="text-danger">{{$message}}</p>
                             @enderror
 
-                                <input class="medium-input bg-white required" type="email" name="email" id="email"
-                            placeholder="{{__('Your E-mail address')}}" value="{{ old('email') }}">
+                                <input class="form-control medium-input bg-white required" type="email" name="email" id="email"
+                            placeholder="{{__('Your E-mail address *')}}" value="{{ old('email') }}" required>
                             @error('email')
                                 <p class="text-danger">{{$message}}</p>
                             @enderror
 
-                                <input class="medium-input bg-white " type="text" name="state" id="contact-state"
-                            placeholder="{{__('State')}}" value="{{ old('state') }}">
+                                <input class="form-control medium-input bg-white " type="text" name="state" id="contact-state"
+                            placeholder="{{__('State *')}}" value="{{ old('state') }}" required>
                             @error('state')
                                 <p class="text-danger">{{$message}}</p>
                             @enderror
 
-                                <input class="medium-input bg-white " type="text" name="city" id="contact-city"
-                            placeholder="{{__('City')}}" value="{{ old('city') }}">
+                                <input class="form-control medium-input bg-white " type="text" name="city" id="contact-city"
+                            placeholder="{{__('City *')}}" value="{{ old('city') }}" required>
                             @error('city')
                                 <p class="text-danger">{{$message}}</p>
                             @enderror
                             <!-- </div> -->
                             <!-- <div class="col margin-4-rem-bottom sm-margin-20px-bottom"> -->
-                                <select class="select">
-                                    <option value="">Design/Plans</option>
+                                <select class="select form-control" required>
+                                    <option value="">Design/Plans *</option>
                                     <option {{ old('design_plans') == "Permits" ? "selected" : "" }} value="Permits">Permits</option>
                                     <option {{ old('design_plans') == "Construction Managment" ? "selected" : "" }} value="Construction Managment">Construction Managment</option>
                                     <option {{ old('design_plans') == "Consulting" ? "selected" : "" }} value="Consulting">Consulting</option>

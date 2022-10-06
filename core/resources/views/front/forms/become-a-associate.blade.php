@@ -133,12 +133,12 @@
                             </div>
                             <div class="col-12">
                                 <!-- start contact form -->
-                                <form class="row mt-2" method="Post" action="{{route('form.become-a-associate.save')}}">
+                                <form class="row mt-2 needs-validation" method="Post" action="{{route('form.become-a-associate.save')}}" novalidate>
                                     @csrf
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" name="first_name" type="text" id="first-name"
-                                                placeholder="{{__('First Name')}}" value="{{ old('first_name') }}">
+                                            <input class="form-control medium-input bg-white" name="first_name" type="text" id="first-name"
+                                                placeholder="{{__('First Name *')}}" value="{{ old('first_name') }}" required>
                                             @error('first_name')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" name="last_name" type="text" id="last-name"
+                                            <input class="form-control medium-input bg-white" name="last_name" type="text" id="last-name"
                                                 placeholder="{{__('Last Name')}}" value="{{ old('last_name') }}">
                                             @error('last_name')
                                             <p class="text-danger">{{$message}}</p>
@@ -155,8 +155,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="email" name="email" id="contact-email"
-                                                placeholder="{{__('E-mail')}}" value="{{ old('email') }}">
+                                            <input class="form-control medium-input bg-white" type="email" name="email" id="contact-email"
+                                                placeholder="{{__('E-mail *')}}" value="{{ old('email') }}" required>
                                             @error('email')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -164,8 +164,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="phone" id="contact-tel"
-                                                placeholder="{{__('Phone')}}" value="{{ old('phone') }}">
+                                            <input class="form-control medium-input bg-white" type="text" name="phone" id="contact-tel"
+                                                placeholder="{{__('Phone *')}}" value="{{ old('phone') }}" required>
                                             @error('phone')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -174,8 +174,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="state" id="contact-state"
-                                                placeholder="{{__('State')}}" value="{{ old('state') }}">
+                                            <input class="form-control medium-input bg-white" type="text" name="state" id="contact-state"
+                                                placeholder="{{__('State *')}}" value="{{ old('state') }}" required>
                                             @error('state')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -184,8 +184,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="city" id="contact-city"
-                                                placeholder="{{__('City')}}" value="{{ old('city') }}">
+                                            <input class="form-control medium-input bg-white" type="text" name="city" id="contact-city"
+                                                placeholder="{{__('City *')}}" value="{{ old('city') }}" required>
                                             @error('city')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -195,7 +195,7 @@
 
                                     <div class="col-12  ">
                                         <div class="form-group">
-                                            <select class="" name="i_am_a" id="i_am_a">
+                                            <select class="form-control" name="i_am_a" id="i_am_a" required>
                                                 <option {{ old('i_am_a') == "Architect" ? "selected" : "" }} value="Architect">Architect</option>
                                                 <option {{ old('i_am_a') == "Interior designer" ? "selected" : "" }} value="Interior designer">Interior designer</option>
                                                 <option {{ old('i_am_a') == "Contractor" ? "selected" : "" }} value="Contractor">Contractor</option>
