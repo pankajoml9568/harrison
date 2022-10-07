@@ -44,7 +44,7 @@
                                 <span class="alt-font d-block margin-15px-bottom">Most of the businesses or individuals trust experts certified by a brand</span>
                                 <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom  sm-margin-20px-bottom">Become a <span style="font-weight:600;">Harrison</span> Associate</h5>
                                 <p class="margin-40px-bottom sm-margin-30px-bottom">Harrison respects talent and is always committed to providing the right platform for people who love their work and who are dedicated to quality/ timeliness and commitments made to the consumer.</p>
-                                <a href="contact-us-simple.html" class="btn btn-small btn-dark-gray">Become a partner</a>
+                                <a href="{{ url('become-a-dealer/#dealerform') }}" class="btn btn-small btn-dark-gray">Become a partner</a>
                             </div>
                         </div>
                     </div>
@@ -133,12 +133,12 @@
                             </div>
                             <div class="col-12">
                                 <!-- start contact form -->
-                                <form class="row mt-2 needs-validation" method="Post" action="{{route('form.become-a-associate.save')}}" novalidate>
+                                <form class="row mt-2" method="Post" action="{{route('form.become-a-associate.save')}}">
                                     @csrf
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" name="first_name" type="text" id="first-name"
-                                                placeholder="{{__('First Name *')}}" value="{{ old('first_name') }}" required>
+                                            <input class="medium-input bg-white" name="first_name" type="text" id="first-name"
+                                                placeholder="{{__('First Name')}}" value="{{ old('first_name') }}">
                                             @error('first_name')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" name="last_name" type="text" id="last-name"
+                                            <input class="medium-input bg-white" name="last_name" type="text" id="last-name"
                                                 placeholder="{{__('Last Name')}}" value="{{ old('last_name') }}">
                                             @error('last_name')
                                             <p class="text-danger">{{$message}}</p>
@@ -155,8 +155,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" type="email" name="email" id="contact-email"
-                                                placeholder="{{__('E-mail *')}}" value="{{ old('email') }}" required>
+                                            <input class="medium-input bg-white" type="email" name="email" id="contact-email"
+                                                placeholder="{{__('E-mail')}}" value="{{ old('email') }}">
                                             @error('email')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -164,8 +164,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" type="text" name="phone" id="contact-tel"
-                                                placeholder="{{__('Phone *')}}" value="{{ old('phone') }}" required>
+                                            <input class="medium-input bg-white" type="text" name="phone" id="contact-tel"
+                                                placeholder="{{__('Phone')}}" value="{{ old('phone') }}">
                                             @error('phone')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -174,8 +174,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" type="text" name="state" id="contact-state"
-                                                placeholder="{{__('State *')}}" value="{{ old('state') }}" required>
+                                            <input class="medium-input bg-white" type="text" name="state" id="contact-state"
+                                                placeholder="{{__('State')}}" value="{{ old('state') }}">
                                             @error('state')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -184,8 +184,8 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control medium-input bg-white" type="text" name="city" id="contact-city"
-                                                placeholder="{{__('City *')}}" value="{{ old('city') }}" required>
+                                            <input class="medium-input bg-white" type="text" name="city" id="contact-city"
+                                                placeholder="{{__('City')}}" value="{{ old('city') }}">
                                             @error('city')
                                             <p class="text-danger">{{$message}}</p>
                                             @enderror
@@ -195,7 +195,7 @@
 
                                     <div class="col-12  ">
                                         <div class="form-group">
-                                            <select class="form-control" name="i_am_a" id="i_am_a" required>
+                                            <select class="" name="i_am_a" id="i_am_a">
                                                 <option {{ old('i_am_a') == "Architect" ? "selected" : "" }} value="Architect">Architect</option>
                                                 <option {{ old('i_am_a') == "Interior designer" ? "selected" : "" }} value="Interior designer">Interior designer</option>
                                                 <option {{ old('i_am_a') == "Contractor" ? "selected" : "" }} value="Contractor">Contractor</option>
@@ -221,10 +221,10 @@
 
                                     <div class="col text-left sm-margin-30px-bottom">
                                         <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                        <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="coming-soon.php" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                                        <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="{{ url('privacy-policy') }}" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                                     </div>
-
-                                    <div class="col-12 text-right">
+                                    <br><br>
+                                    <div class="col-12 text-center">
                                         <button class="btn btn-medium btn-gradient-light-purple-light-orange mb-0" type="submit">{{ __('Send message') }}</button>
                                     </div>
                                 </form>

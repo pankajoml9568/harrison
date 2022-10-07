@@ -1,25 +1,25 @@
-@extends('master.front')
 
-@section('title')
+
+<?php $__env->startSection('title'); ?>
 Milestones
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('meta')
+<?php $__env->startSection('meta'); ?>
 <meta name="keywords" content="">
 <meta name="description" content="">
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
  <!-- Page Title-->
 
-@include('includes.title', ['banner' => '', 'title'=>'Milestones'])
+<?php echo $__env->make('includes.title', ['banner' => '', 'title'=>'Milestones'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
 <div class="timeline_sec">
     <div style="container">
         <div class="">
             <div class="col-12">
-                <img src="{{ asset('assets/images/timeline-img.jpg') }}">
+                <img src="<?php echo e(asset('assets/images/timeline-img.jpg')); ?>">
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@ Milestones
         </div>
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Masking Tape & Biometric Locks</p>
             </div>
             <div class="icon-holder">
@@ -42,7 +42,7 @@ Milestones
 
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Screws & Tantem</p>
             </div>
             <div class="icon-holder">2019</div>
@@ -50,14 +50,14 @@ Milestones
 
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Kitchen Basket & Valv 'E' Drawer Tantem 'E' Boxes</p>
             </div>
             <div class="icon-holder">2016</div>
         </li>
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Locks & Door Hardware</p>
             </div>
             <div class="icon-holder">2010</div>
@@ -65,14 +65,14 @@ Milestones
 
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Handle Plate Sets</p>
             </div>
             <div class="icon-holder">2003</div>
         </li>
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Locks & Hardware</p>
             </div>
             <div class="icon-holder">2000</div>
@@ -80,14 +80,14 @@ Milestones
         <li>
 
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Locks & Furniture</p>
             </div>
             <div class="icon-holder">1990</div>
         </li>
         <li>
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Lock of all kinds</p>
             </div>
             <div class="icon-holder">1971</div>
@@ -95,7 +95,7 @@ Milestones
         <li>
 
             <div class="bdr_bg">
-                <img src="{{ asset('assets/harrison/images/logo.png') }}">
+                <img src="<?php echo e(asset('assets/harrison/images/logo.png')); ?>">
                 <p>Launches<br>Brass & Iron Locks</p>
             </div>
 
@@ -104,9 +104,10 @@ Milestones
     </ul>
 </div>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
-<script type="text/javascript" src="{{ asset('assets/front/harrison/js/timeline.js') }}"></script>
-@endsection
+<script type="text/javascript" src="<?php echo e(asset('assets/front/harrison/js/timeline.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/pages/milestones.blade.php ENDPATH**/ ?>

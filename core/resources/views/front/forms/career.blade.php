@@ -66,11 +66,12 @@
                                         <!-- start modal pop-up -->
                                         <div id="modal-popup2" class="zoom-anim-dialog col-11 col-xl-6 col-lg-6 col-md-8 col-sm-9 mx-auto bg-white text-center modal-popup-main padding-2-half-rem-all mfp-hide border-radius-6px sm-padding-2-half-rem-lr">
                                             
-                                            <form class="row mt-2 needs-validation" method="Post" action="{{route('form.career.submit')}}" enctype="multipart/form-data" novalidate>
+                                            <form class="row mt-2" method="Post" action="{{route('form.career.submit')}}" enctype="multipart/form-data">
                                                 @csrf
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="name" type="text" id="name" placeholder="{{__('Full Name *')}}"  value="{{ old('name') }}" required>
+                                                        <label for="name">{{__('Full Name')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="name" type="text" id="name" placeholder="{{__('Full Name')}}"  value="{{ old('name') }}">
                                                         @error('name')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -78,7 +79,8 @@
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="email" name="email" id="contact-email" placeholder="{{__('E-mail address *')}}"  value="{{ old('email') }}" required>
+                                                        <label for="contact-email">{{__('E-mail address')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="email" name="email" id="contact-email" placeholder="{{__('E-mail address')}}"  value="{{ old('email') }}">
                                                         @error('email')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -86,7 +88,8 @@
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="mobile" id="contact-tel" placeholder="{{__('Mobile Number *')}}"  value="{{ old('mobile') }}" required>
+                                                        <label for="contact-tel">{{__('Mobile Number')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="mobile" id="contact-tel" placeholder="{{__('Mobile Number')}}"  value="{{ old('mobile') }}">
                                                         @error('phone')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -94,7 +97,8 @@
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="date" name="dob" id="contact-dob" placeholder="{{__('Date of Birth *')}}"  value="{{ old('dob') }}" required>
+                                                        <label for="contact-dob">{{__('Date of Birth')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="date" name="dob" id="contact-dob" placeholder="{{__('Date of Birth')}}"  value="{{ old('dob') }}">
                                                         @error('dob')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -103,8 +107,9 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="gender" id="contact-gender" required>
-                                                                <option value="">--- Gender *---</option>
+                                                        <label for="contact-gender">{{__('Gender')}}</label>
+                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="gender" id="contact-gender">
+                                                                <option value="">--- Gender ---</option>
                                                                 <option {{ old('gender') == "Male" ? "selected" : "" }} value="Male">Male</option>
                                                                 <option {{ old('gender') == "Female" ? "selected" : "" }} value="Female">Female</option>
                                                                 
@@ -117,8 +122,9 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="country" id="contact-country" required>
-                                                                <option value="">--- Country *---</option>
+                                                        <label for="contact-country">{{__('Country')}}</label>
+                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="country" id="contact-country">
+                                                                <option value="">--- Country ---</option>
                                                                 <option {{ old('country') == "India" ? "selected" : "" }} value="India">India</option>
                                                                 
                                                             </select>
@@ -130,7 +136,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="state" id="contact-state" placeholder="{{__('State *')}}"  value="{{ old('state') }}" required>
+                                                        <label for="contact-state">{{__('State')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="state" id="contact-state" placeholder="{{__('State')}}"  value="{{ old('state') }}">
                                                         @error('state')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -139,7 +146,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="city" id="contact-city" placeholder="{{__('City *')}}"  value="{{ old('city') }}" required>
+                                                        <label for="contact-city">{{__('City')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="city" id="contact-city" placeholder="{{__('City')}}"  value="{{ old('city') }}">
                                                         @error('city')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -148,7 +156,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="apply_for" id="contact-apply_for" placeholder="{{__('Apply For *')}}"  value="{{ old('apply_for') }}" required>
+                                                        <label for="contact-apply_for">{{__('Resume Description')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="apply_for" id="contact-apply_for" placeholder="{{__('Apply For')}}"  value="{{ old('apply_for') }}">
                                                         @error('apply_for')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -157,8 +166,9 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="highest_education" id="contact-highest_education" required>
-                                                                <option value="">--- Highest Education *---</option>
+                                                        <label for="contact-highest_education">{{__('Highest Education')}}</label>
+                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="highest_education" id="contact-highest_education">
+                                                                <option value="">--- Highest Education ---</option>
                                                                 <option {{ old('highest_education') == "12th" ? "selected" : "" }} value="12th">12th</option>
                                                                 
                                                             </select>
@@ -170,7 +180,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="total_experince" id="contact-total_experince" placeholder="{{__('Total Experience *')}}"  value="{{ old('total_experince') }}" required>
+                                                        <label for="contact-total_experince">{{__('Total Experience')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="total_experince" id="contact-total_experince" placeholder="{{__('Total Experience')}}"  value="{{ old('total_experince') }}">
                                                         @error('total_experince')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -179,7 +190,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="prefered_location" id="contact-prefered_location" placeholder="{{__('Prefered Location *')}}"  value="{{ old('prefered_location') }}" required>
+                                                        <label for="contact-prefered_location">{{__('Prefered Location')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="prefered_location" id="contact-prefered_location" placeholder="{{__('Prefered Location')}}"  value="{{ old('prefered_location') }}">
                                                         @error('prefered_location')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -188,7 +200,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_designation" id="contact-current_designation" placeholder="{{__('Current Designation *')}}"  value="{{ old('current_designation') }}" required>
+                                                        <label for="contact-current_designation">{{__('Current Designation')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_designation" id="contact-current_designation" placeholder="{{__('Current Designation')}}"  value="{{ old('current_designation') }}">
                                                         @error('current_designation')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -197,7 +210,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_employer" id="contact-current_employer" placeholder="{{__('Current Employer *')}}"  value="{{ old('current_employer') }}" required>
+                                                        <label for="contact-current_employer">{{__('Current Employer')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_employer" id="contact-current_employer" placeholder="{{__('Current Employer')}}"  value="{{ old('current_employer') }}">
                                                         @error('current_employer')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -206,7 +220,8 @@
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_annual_ctc" id="contact-current_annual_ctc" placeholder="{{__('Current Annual CTC *')}}"  value="{{ old('current_annual_ctc') }}" required>
+                                                        <label for="contact-current_annual_ctc">{{__('Current Annual CTC')}}</label>
+                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_annual_ctc" id="contact-current_annual_ctc" placeholder="{{__('Current Annual CTC')}}"  value="{{ old('current_annual_ctc') }}">
                                                         @error('current_annual_ctc')
                                                         <p class="text-danger">{{$message}}</p>
                                                         @enderror
@@ -214,6 +229,7 @@
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
+                                                        <label for="resume">{{__('Attech Resume')}}</label>
                                                         <input type="file" class="form-control-file" name="resume" id="resume">
                                                         @error('resume')
                                                         <p class="text-danger">{{$message}}</p>

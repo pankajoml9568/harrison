@@ -1,18 +1,19 @@
-@extends('master.front')
-@section('meta')
-<meta name="keywords" content="{{$setting->meta_keywords}}">
-<meta name="description" content="{{$setting->meta_description}}">
-@endsection
-@section('title')
-{{__('Become a Dealer')}}
-@endsection
 
-@section('content')
+<?php $__env->startSection('meta'); ?>
+<meta name="keywords" content="<?php echo e($setting->meta_keywords); ?>">
+<meta name="description" content="<?php echo e($setting->meta_description); ?>">
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('title'); ?>
+<?php echo e(__('Become a Dealer')); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
 <!-- Page Title-->
-@include('includes.title', ['banner' => '', 'title'=>'Become a Dealer'])
+<?php echo $__env->make('includes.title', ['banner' => '', 'title'=>'Become a Dealer'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- Page Content-->
 
-    @include('includes.alert')
+    <?php echo $__env->make('includes.alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <!-- start section -->
 <section class="bg3-c">
@@ -25,7 +26,7 @@
             </div>
             <div class="col-12 col-lg-7 col-md-9 padding-55px-lr md-padding-5px-left sm-padding-50px-right">
                 <figure class="image-back-offset-shadow position-right w-100">
-                    <img class="border-radius-6px" src="{{ asset('assets/harrison/images/our-services-01.jpg') }}" alt=""/>
+                    <img class="border-radius-6px" src="<?php echo e(asset('assets/harrison/images/our-services-01.jpg')); ?>" alt=""/>
                     <span class="bg-gradient-light-purple-light-orange border-radius-6px overlay"></span>
                 </figure>
             </div>
@@ -108,72 +109,121 @@
                     </div>
                     <div class="col-12">
                         <!-- start contact form -->
-                        <form class="row mt-2" method="Post" action="{{route('form.become-a-dealer.save')}}">
-                            @csrf
+                        <form class="row mt-2" method="Post" action="<?php echo e(route('form.become-a-dealer.save')); ?>">
+                            <?php echo csrf_field(); ?>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" name="first_name" type="text" id="first-name"
-                                        placeholder="{{__('First Name')}}" value="{{ old('first_name') }}">
-                                    @error('first_name')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('First Name')); ?>" value="<?php echo e(old('first_name')); ?>">
+                                    <?php $__errorArgs = ['first_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" name="last_name" type="text" id="last-name"
-                                        placeholder="{{__('Last Name')}}" value="{{ old('last_name') }}">
-                                    @error('last_name')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('Last Name')); ?>" value="<?php echo e(old('last_name')); ?>">
+                                    <?php $__errorArgs = ['last_name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" type="email" name="email" id="contact-email"
-                                        placeholder="{{__('E-mail')}}" value="{{ old('email') }}">
-                                    @error('email')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('E-mail')); ?>" value="<?php echo e(old('email')); ?>">
+                                    <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" type="text" name="phone" id="contact-tel"
-                                        placeholder="{{__('Phone')}}" value="{{ old('phone') }}">
-                                    @error('phone')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('Phone')); ?>" value="<?php echo e(old('phone')); ?>">
+                                    <?php $__errorArgs = ['phone'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" type="text" name="state" id="contact-state"
-                                        placeholder="{{__('State')}}" value="{{ old('state') }}">
-                                    @error('state')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('State')); ?>" value="<?php echo e(old('state')); ?>">
+                                    <?php $__errorArgs = ['state'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="medium-input bg-white required" type="text" name="city" id="contact-city"
-                                        placeholder="{{__('City')}}" value="{{ old('city') }}">
-                                    @error('city')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>">
+                                    <?php $__errorArgs = ['city'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
 
                             <div class="col-6  ">
                                 <div class="form-group">
                                     <textarea class="medium-input bg-white" rows="5" name="address" id="address-text"
-                                        placeholder="{{__('Your address...')}}">{{ old('address') }}</textarea>
-                                    @error('address')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('Your address...')); ?>"><?php echo e(old('address')); ?></textarea>
+                                    <?php $__errorArgs = ['address'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
 
@@ -181,31 +231,40 @@
                             <div class="col-6  ">
                                 <div class="form-group">
                                     <textarea class="medium-input bg-white" rows="5" name="message" id="message-text"
-                                        placeholder="{{__('Write your message here...')}}">{{ old('message') }}</textarea>
-                                    @error('message')
-                                    <p class="text-danger">{{$message}}</p>
-                                    @enderror
+                                        placeholder="<?php echo e(__('Write your message here...')); ?>"><?php echo e(old('message')); ?></textarea>
+                                    <?php $__errorArgs = ['message'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
+                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                 </div>
                             </div>
-                            @if ($setting->recaptcha == 1)
+                            <?php if($setting->recaptcha == 1): ?>
                             <div class="col-lg-12 mb-4">
-                                {!! NoCaptcha::renderJs() !!}
-                                {!! NoCaptcha::display() !!}
-                                @if ($errors->has('g-recaptcha-response'))
-                                @php
+                                <?php echo NoCaptcha::renderJs(); ?>
+
+                                <?php echo NoCaptcha::display(); ?>
+
+                                <?php if($errors->has('g-recaptcha-response')): ?>
+                                <?php
                                 $errmsg = $errors->first('g-recaptcha-response');
-                                @endphp
-                                <p class="text-danger mb-0">{{__("$errmsg")}}</p>
-                                @endif
+                                ?>
+                                <p class="text-danger mb-0"><?php echo e(__("$errmsg")); ?></p>
+                                <?php endif; ?>
                             </div>
-                            @endif
+                            <?php endif; ?>
 
                             <div class="col text-left sm-margin-30px-bottom">
                                 <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="{{ url('privacy-policy') }}" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                                <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="<?php echo e(url('privacy-policy')); ?>" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                             </div>
                             <div class="col text-center text-md-right">
-                                <button class="btn btn-medium btn-gradient-light-purple-light-orange mb-0" type="submit"><span>{{ __('Send message') }}</span></button>
+                                <button class="btn btn-medium btn-gradient-light-purple-light-orange mb-0" type="submit"><span><?php echo e(__('Send message')); ?></span></button>
                             </div>
                         </form>
                         <!-- end contact form -->
@@ -233,7 +292,7 @@
                     <div class="testimonials-bubble text-extra-medium d-block w-75 lg-w-85">Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work.</div>
                     <div class="w-100 h-1px bg-medium-gray margin-35px-tb lg-margin-30px-tb"></div>
                     <div class="author">
-                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="{{ asset('assets/harrison/images/avtar27.jpg') }}" alt="">
+                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="<?php echo e(asset('assets/harrison/images/avtar27.jpg')); ?>" alt="">
                         <div class="d-inline-block align-middle">
                             <span class="alt-font text-medium font-weight-500 line-height-20px text-extra-dark-gray d-block text-uppercase">Shoko Mugikura</span>
                             <span class="d-block text-small text-uppercase">Graphic designer</span>
@@ -249,7 +308,7 @@
                     <div class="testimonials-bubble text-extra-medium d-block w-75 lg-w-85">Trust us we looked for a very long time and wasted thousands of dollars testing other teams, freelancers, and outsource companies.</div>
                     <div class="w-100 h-1px bg-medium-gray margin-35px-tb lg-margin-30px-tb"></div>
                     <div class="author">
-                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="{{ asset('assets/harrison/images/avtar28.jpg') }}" alt="">
+                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="<?php echo e(asset('assets/harrison/images/avtar28.jpg')); ?>" alt="">
                         <div class="d-inline-block align-middle">
                             <span class="alt-font text-medium font-weight-500 line-height-20px text-extra-dark-gray d-block text-uppercase">Jonsan Donner</span>
                             <span class="d-block text-small text-uppercase">Sales manager</span>
@@ -265,7 +324,7 @@
                     <div class="testimonials-bubble text-extra-medium d-block w-75 lg-w-85">This is an excellent company! I personally enjoyed the energy and the professional support the whole team gave to us into creating website.</div>
                     <div class="w-100 h-1px bg-medium-gray margin-35px-tb lg-margin-30px-tb"></div>
                     <div class="author">
-                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="{{ asset('assets/harrison/images/avtar29.jpg') }}" alt="">
+                        <img class="rounded-circle w-60px h-60px margin-15px-right" src="<?php echo e(asset('assets/harrison/images/avtar29.jpg')); ?>" alt="">
                         <div class="d-inline-block align-middle">
                             <span class="alt-font text-medium font-weight-500 line-height-20px text-extra-dark-gray d-block text-uppercase">Mackangy Rose</span>
                             <span class="d-block text-small text-uppercase">Creative director</span>
@@ -278,4 +337,5 @@
     </div>
 </section>
 <!-- end section -->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/forms/become-a-dealer.blade.php ENDPATH**/ ?>
