@@ -40,7 +40,6 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/harrison/css/responsive.css') }}">
 <!-- Harrison -->
 
-
 <!-- Color css -->
 <!-- <link href="{{ asset('assets/front/css/color.php?primary_color=').str_replace('#','',$setting->primary_color) }}" rel="stylesheet"> -->
 
@@ -220,7 +219,6 @@
                                 <li class="nav-item" role="presentation99">
                                   <span class="" id="mcat-tab" data-bs-toggle="tab" data-bs-target="#mcat"  role="tab" aria-controls="mcat" aria-selected="false">{{ __('Category') }}</span>
                                 </li>
-
                               </ul>
                               <div class="tab-content p-0" >
                                 <div class="tab-pane fade show active" id="mmenu" role="tabpanel" aria-labelledby="mmenu-tab">
@@ -261,7 +259,6 @@
                                 <div class="tab-pane fade" id="mcat" role="tabpanel" aria-labelledby="mcat-tab">
                                     <nav class="slideable-menu">
                                         @include('includes.mobile-category')
-
                                     </nav>
                                 </div>
                               </div>
@@ -270,8 +267,9 @@
                 </div>
             </div>
         </div>
-    </div>
-  <!-- Navbar-->
+  </div>
+  
+  <!-- Navbar-->  
   <div class="navbar">
         <div class="container">
             <div class="row g-3 w-100">
@@ -376,7 +374,7 @@
                                     aria-hidden="true"></i>
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="dropdown"><a href="{{ route('awards') }}">Award</a></li>
-                                    <li class="dropdown"><a href="#">News & Media</a></li>
+                                    <!-- <li class="dropdown"><a href="{{ route('newsMedia') }}">News & Media</a></li> -->
                                 </ul>
                             </li>
 
@@ -487,9 +485,6 @@
             </div>
         </nav>
 
-    
-
-
     <!-- end navigation -->
 </header>
 <!-- end HARRISON header -->
@@ -527,7 +522,6 @@
             <img src="{{ asset('assets/images/'.$setting->announcement) }}" alt="">
         </a>
     @endif
-
 
 </div>
 <!--    announcement banner section end   -->
@@ -644,21 +638,20 @@
     <div class="footer-bottom ">
         <div class="container">
             <div class="row ">
+                
                 <!-- start footer column -->
-                <div class="col-12 col-xl-4 col-lg col-sm-4 md-margin-50px-bottom xs-margin-25px-bottom">
+                <div class="col-12 col-xl-4 col-lg col-sm-6 md-margin-50px-bottom xs-margin-25px-bottom">
                     <a href="{{ url('/') }}"><img src="{{ asset('assets/harrison/images/logo.png') }}" alt="Footer Logo"></a>
-                    <!-- <p style="padding-top:15px;">Over 6 decades, Harrison which has been brand leader in locks &
-                        hardware solution. Be fealess & desire for more from HARRISON with a bold thinking and
-                        rigorous craftsmanship combine to bring innovative, sturdy products.</p> -->
+                    <p style="padding-top:15px;">Harrison has been known for providing the best security & hardware solutions. We're celebrating 65+ years of setting the standards of excellence and pushing the limits of product design.</p>
                 </div>
                 <!-- end footer column -->
 
                 <!-- start footer column -->
-                <div class="col-12 col-xl-2 col-lg col-sm-4 md-margin-50px-bottom xs-margin-25px-bottom">
+                <div class="col-12 col-xl-2 col-lg col-sm-6 md-margin-50px-bottom xs-margin-25px-bottom">
                     <h4>Quick Link</h4>
                     <ul>
                         <!-- <li><a href="#">Products</a></li> -->
-                        <li><a href="javascript:void(0)">About Us</a></li>
+                        <li><a href="{{ route('corporateOverview') }}">About Us</a></li>
                         <li><a href="{{ route('front.contact') }}">Contact us</a></li>
                         <li><a href="{{ route('form.career') }}">Career</a></li>
                         <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
@@ -670,7 +663,7 @@
 
                 <!-- start footer column -->
                 <div
-                    class="col-12 col-xl-3 col-lg col-sm-4 md-margin-50px-bottom xs-margin-25px-bottom contact-info">
+                    class="col-12 col-xl-3 col-lg col-sm-6 md-margin-50px-bottom xs-margin-25px-bottom contact-info">
                     <h4>Contact Info</h4>
                     <ul class="address-infor">
                         <li>
@@ -693,7 +686,7 @@
 
                 <!-- start footer column -->
                 <div
-                    class="col-12 col-xl-3 col-lg-4 col-sm-8 text-sm-center text-lg-left last-paragraph-no-margin">
+                    class="col-12 col-xl-3 col-lg-4 col-sm-6 text-sm-center text-lg-left last-paragraph-no-margin">
                     <h4>Subscribe to newsletter</h4>
                     <form class="row subscriber-form" action="{{route('front.subscriber.submit')}}" method="post">
                         @csrf
