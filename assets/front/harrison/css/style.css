@@ -24470,3 +24470,34 @@ section#app {
     font-size: 18px;
     box-shadow: 0 6px 25px rgb(0 0 0 / 7%);
 }
+.js-cookie-consent.cookie-consent {
+    background: rgb(0 0 0 / 71%);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 13px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.cookie-container {
+    justify-content: space-between;
+    display: flex;
+}
+button .js-cookie-consent-agree.cookie-consent__agree {
+    color: #000000;
+    background-color: #ffffff;
+}
+button .js-cookie-consent-agree.cookie-consent__agree:active {
+    border-color: #fff;
+}
+button .js-cookie-consent-agree.cookie-consent__agree:focus {
+    border-color: #fff;
+}
+button .js-cookie-consent-agree.cookie-consent__agree:hover {
+    border-color: #fff;
+    transform: translateY(3px);
+>>>>>>> Stashed changes
+}
