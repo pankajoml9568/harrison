@@ -97,7 +97,7 @@
 <!-- end section -->
 
 <!-- start section -->
-<section class="wow animate__fadeIn bg-very-light-blue">
+<section id="dealerform" class="wow animate__fadeIn bg-very-light-blue">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
@@ -112,11 +112,9 @@
                             @csrf
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " name="first_name" type="text" id="first-name"
+                                    <input class="form-control " name="first_name" type="text" id="first-name"
                                         placeholder="{{__('First Name *')}}" value="{{ old('first_name') }}" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your first name.
-                                        </span>
+                                        
                                     @error('first_name')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -124,7 +122,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " name="last_name" type="text" id="last-name"
+                                    <input class="form-control " name="last_name" type="text" id="last-name"
                                         placeholder="{{__('Last Name *')}}" value="{{ old('last_name') }}">
                                     @error('last_name')
                                     <p class="text-danger">{{$message}}</p>
@@ -133,11 +131,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="email" name="email" id="contact-email"
+                                    <input class="form-control " type="email" name="email" id="contact-email"
                                         placeholder="{{__('E-mail *')}}" value="{{ old('email') }}" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your E-mail address.
-                                        </span>
+                                        
                                     @error('email')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -145,11 +141,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="phone" id="contact-tel"
+                                    <input class="form-control " type="text" name="phone" id="contact-tel"
                                         placeholder="{{__('Phone *')}}" value="{{ old('phone') }}" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your Phone number.
-                                        </span>
+                                        
                                     @error('phone')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -158,11 +152,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="state" id="contact-state"
+                                    <input class="form-control " type="text" name="state" id="contact-state"
                                         placeholder="{{__('State *')}}" value="{{ old('state') }}" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your State.
-                                        </span>
+                                        
                                     @error('state')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -171,11 +163,9 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="medium-input bg-white " type="text" name="city" id="contact-city"
+                                    <input class="form-control " type="text" name="city" id="contact-city"
                                         placeholder="{{__('City')}}" value="{{ old('city') }}" required>
-                                        <span class="invalid-feedback">
-                                            Please enter your City.
-                                        </span>
+                                        
                                     @error('city')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
@@ -184,10 +174,10 @@
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="medium-input bg-white" rows="5" name="address" id="address-text"
+                                    <textarea class="form-control" rows="5" name="address" id="address-text"
                                         placeholder="{{__('Your address...')}}">{{ old('address') }}</textarea>
                                     @error('address')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>
@@ -195,10 +185,10 @@
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="medium-input bg-white" rows="5" name="message" id="message-text"
+                                    <textarea class="form-control" rows="5" name="message" id="message-text"
                                         placeholder="{{__('Write your message here...')}}">{{ old('message') }}</textarea>
                                     @error('message')
-                                    <p class="text-danger">{{$message}}</p>
+                                    <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                             </div>

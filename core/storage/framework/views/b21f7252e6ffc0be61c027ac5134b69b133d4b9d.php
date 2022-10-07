@@ -1,17 +1,17 @@
-@extends('master.front')
 
-@section('title')
+
+<?php $__env->startSection('title'); ?>
 Corporate Overview
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('meta')
+<?php $__env->startSection('meta'); ?>
 <meta name="keywords" content="">
 <meta name="description" content="">
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
  <!-- Page Title-->
-@include('includes.title', ['banner' => '', 'title'=>'Corporate Overview'])
+<?php echo $__env->make('includes.title', ['banner' => '', 'title'=>'Corporate Overview'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
   <!-- Harrison theme start -->
 
@@ -33,7 +33,7 @@ Corporate Overview
                             <div id="who-we-are" class="tab-pane fade in active show">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-md-6 text-right sm-margin-40px-bottom">
-                                        <img src="{{ asset('assets/harrison/images/what-we-offers-02.jpg') }}" class="w-90 sm-w-100" alt="" />
+                                        <img src="<?php echo e(asset('assets/harrison/images/what-we-offers-02.jpg')); ?>" class="w-90 sm-w-100" alt="" />
                                     </div>
                                     <div class="col-12 col-lg-5 offset-lg-1 col-md-6">
                                         <span class="alt-font d-block text-extra-medium margin-15px-bottom">We are Harrison</span>
@@ -49,7 +49,7 @@ Corporate Overview
                             <div id="our-space-for-quality" class="tab-pane fade">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-md-6 text-right sm-margin-40px-bottom">
-                                        <img src="{{ asset('assets/harrison/images/what-we-offers-04.jpg') }}" class="w-90 sm-w-100" alt="" />
+                                        <img src="<?php echo e(asset('assets/harrison/images/what-we-offers-04.jpg')); ?>" class="w-90 sm-w-100" alt="" />
                                     </div>
                                     <div class="col-12 col-lg-5 offset-lg-1 col-md-6">
                                         <span class="alt-font d-block text-extra-medium margin-15px-bottom">Being quality centeric at core</span>
@@ -65,7 +65,7 @@ Corporate Overview
                             <div id="partner-in-success" class="tab-pane fade">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-md-6 text-right sm-margin-40px-bottom">
-                                        <img src="{{ asset('assets/harrison/images/what-we-offers-06.jpg') }}" class="w-90 sm-w-100" alt="" />
+                                        <img src="<?php echo e(asset('assets/harrison/images/what-we-offers-06.jpg')); ?>" class="w-90 sm-w-100" alt="" />
                                     </div>
                                     <div class="col-12 col-lg-5 offset-lg-1 col-md-6">
                                         <span class="alt-font d-block text-extra-medium margin-15px-bottom">Partner in success</span>
@@ -81,7 +81,7 @@ Corporate Overview
                             <div id="our-goals" class="tab-pane fade">
                                 <div class="row align-items-center">
                                     <div class="col-12 col-md-6 text-right sm-margin-40px-bottom">
-                                        <img src="{{ asset('assets/harrison/images/what-we-offers-05.jpg') }}" class="w-90 sm-w-100" alt="" />
+                                        <img src="<?php echo e(asset('assets/harrison/images/what-we-offers-05.jpg')); ?>" class="w-90 sm-w-100" alt="" />
                                     </div>
                                     <div class="col-12 col-lg-5 offset-lg-1 col-md-6">
                                         <span class="alt-font d-block text-extra-medium margin-15px-bottom">Ever-expanding</span>
@@ -126,12 +126,12 @@ Corporate Overview
         </section>
         <!-- end section -->
 
-        <section class="cover-background" style="background: url('{{ asset('assets/harrison/images/home-marketing-agency-bg-img-05.jpg') }}')">
+        <section class="cover-background" style="background: url('<?php echo e(asset('assets/harrison/images/home-marketing-agency-bg-img-05.jpg')); ?>')">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-xl-8 col-lg-8 col-md-8 order-lg-2 text-center text-lg-left wow animate__fadeIn"
                 data-wow-delay="0.4s">
-                <img src="{{ asset('assets/harrison/images/home-marketing-agency-img-02.png') }}" class="margin-20px-bottom" alt="">
+                <img src="<?php echo e(asset('assets/harrison/images/home-marketing-agency-img-02.png')); ?>" class="margin-20px-bottom" alt="">
                 <h4
                     class="alt-font font-weight-300 text-extra-dark-gray letter-spacing-minus-1px w-85 margin-3-rem-bottom md-w-100">
                     CEO's <span class="font-weight-600">message</span></h4>
@@ -154,11 +154,11 @@ Corporate Overview
 
                 <ul>
                 <p class=" text-white opacity-9 w-85 md-w-100">We are also working through COFO model of Suvidha Store also – on Franchise Basis, with costs being shared by Company.</p>
-                <img src="{{ asset('assets/harrison/images/umang-monga.png') }}" class="align-self-start margin-25px-top sm-no-margin-top" alt="">
+                <img src="<?php echo e(asset('assets/harrison/images/umang-monga.png')); ?>" class="align-self-start margin-25px-top sm-no-margin-top" alt="">
             </div>
             <div class="col-10 col-lg-4 text-right">
                 <div class="position-relative">
-                    <img src="{{ asset('assets/harrison/images/ceo-img.png') }}" class=" wow animate__fadeIn" alt="" />
+                    <img src="<?php echo e(asset('assets/harrison/images/ceo-img.png')); ?>" class=" wow animate__fadeIn" alt="" />
                     
                 </div>
             </div>
@@ -178,16 +178,16 @@ Corporate Overview
                     <div class="col-lg-12">
                         <div class="logos">
                             <ul>
-                                <li><img src="{{ asset('assets/harrison/images/clients/delhi-metro-rail-corporation-logo.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/nbcc-logo.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/dlf.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/aace.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/harvest-gold.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/fci.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/hyper-city.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/tdi-creating.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/gaurs.jpg') }}" data-no-retina=""></li>
-                                <li><img src="{{ asset('assets/harrison/images/clients/walmart.jpg') }}" data-no-retina=""></li>                                
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/delhi-metro-rail-corporation-logo.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/nbcc-logo.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/dlf.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/aace.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/harvest-gold.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/fci.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/hyper-city.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/tdi-creating.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/gaurs.jpg')); ?>" data-no-retina=""></li>
+                                <li><img src="<?php echo e(asset('assets/harrison/images/clients/walmart.jpg')); ?>" data-no-retina=""></li>                                
                             </ul>
                         </div>
                     </div>
@@ -199,4 +199,5 @@ Corporate Overview
         </div>    
 </section>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/pages/corporate-overview.blade.php ENDPATH**/ ?>

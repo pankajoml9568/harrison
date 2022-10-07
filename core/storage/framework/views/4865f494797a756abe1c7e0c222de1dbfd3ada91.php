@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('meta'); ?>
 <meta name="keywords" content="<?php echo e($setting->meta_keywords); ?>">
 <meta name="description" content="<?php echo e($setting->meta_description); ?>">
@@ -97,7 +98,7 @@
 <!-- end section -->
 
 <!-- start section -->
-<section class="wow animate__fadeIn bg-very-light-blue">
+<section id="dealerform" class="wow animate__fadeIn bg-very-light-blue">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-10">
@@ -108,19 +109,18 @@
                     </div>
                     <div class="col-12">
                         <!-- start contact form -->
-                        <form class="row mt-2 needs-validation" method="Post" action="<?php echo e(route('form.become-a-dealer.save')); ?>" novalidate>
+                        <form class="row mt-2" method="Post" action="<?php echo e(route('form.become-a-dealer.save')); ?>">
                             <?php echo csrf_field(); ?>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " name="first_name" type="text" id="first-name"
-                                        placeholder="<?php echo e(__('First Name *')); ?>" value="<?php echo e(old('first_name')); ?>" required>
-                                        
+                                    <input class="medium-input bg-white required" name="first_name" type="text" id="first-name"
+                                        placeholder="<?php echo e(__('First Name')); ?>" value="<?php echo e(old('first_name')); ?>">
                                     <?php $__errorArgs = ['first_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -129,8 +129,8 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " name="last_name" type="text" id="last-name"
-                                        placeholder="<?php echo e(__('Last Name *')); ?>" value="<?php echo e(old('last_name')); ?>">
+                                    <input class="medium-input bg-white required" name="last_name" type="text" id="last-name"
+                                        placeholder="<?php echo e(__('Last Name')); ?>" value="<?php echo e(old('last_name')); ?>">
                                     <?php $__errorArgs = ['last_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -145,15 +145,14 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " type="email" name="email" id="contact-email"
-                                        placeholder="<?php echo e(__('E-mail *')); ?>" value="<?php echo e(old('email')); ?>" required>
-                                        
+                                    <input class="medium-input bg-white required" type="email" name="email" id="contact-email"
+                                        placeholder="<?php echo e(__('E-mail')); ?>" value="<?php echo e(old('email')); ?>">
                                     <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -162,15 +161,14 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " type="text" name="phone" id="contact-tel"
-                                        placeholder="<?php echo e(__('Phone *')); ?>" value="<?php echo e(old('phone')); ?>" required>
-                                        
+                                    <input class="medium-input bg-white required" type="text" name="phone" id="contact-tel"
+                                        placeholder="<?php echo e(__('Phone')); ?>" value="<?php echo e(old('phone')); ?>">
                                     <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -180,15 +178,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " type="text" name="state" id="contact-state"
-                                        placeholder="<?php echo e(__('State *')); ?>" value="<?php echo e(old('state')); ?>" required>
-                                        
+                                    <input class="medium-input bg-white required" type="text" name="state" id="contact-state"
+                                        placeholder="<?php echo e(__('State')); ?>" value="<?php echo e(old('state')); ?>">
                                     <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -198,15 +195,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="form-control " type="text" name="city" id="contact-city"
-                                        placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>" required>
-                                        
+                                    <input class="medium-input bg-white required" type="text" name="city" id="contact-city"
+                                        placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>">
                                     <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -216,14 +212,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" name="address" id="address-text"
+                                    <textarea class="medium-input bg-white" rows="5" name="address" id="address-text"
                                         placeholder="<?php echo e(__('Your address...')); ?>"><?php echo e(old('address')); ?></textarea>
                                     <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -234,14 +230,14 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-6  ">
                                 <div class="form-group">
-                                    <textarea class="form-control" rows="5" name="message" id="message-text"
+                                    <textarea class="medium-input bg-white" rows="5" name="message" id="message-text"
                                         placeholder="<?php echo e(__('Write your message here...')); ?>"><?php echo e(old('message')); ?></textarea>
                                     <?php $__errorArgs = ['message'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                    <p class="text-danger"><?php echo e($message); ?></p>
                                     <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -265,7 +261,7 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col text-left sm-margin-30px-bottom">
                                 <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="coming-soon.php" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                                <label for="terms_condition" class="text-small d-inline-block align-top w-85">I accept the terms & conditions and I understand that my data will be hold securely in accordance with the <a href="<?php echo e(url('privacy-policy')); ?>" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                             </div>
                             <div class="col text-center text-md-right">
                                 <button class="btn btn-medium btn-gradient-light-purple-light-orange mb-0" type="submit"><span><?php echo e(__('Send message')); ?></span></button>
@@ -342,4 +338,4 @@ unset($__errorArgs, $__bag); ?>
 </section>
 <!-- end section -->
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/harrison/core/resources/views/front/forms/become-a-dealer.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/forms/become-a-dealer.blade.php ENDPATH**/ ?>

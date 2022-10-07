@@ -1,12 +1,12 @@
-@extends('master.front')
-@section('meta')
-    <meta name="keywords" content="{{ $setting->meta_keywords }}">
-    <meta name="description" content="{{ $setting->meta_description }}">
-@endsection
 
-@section('content')
+<?php $__env->startSection('meta'); ?>
+    <meta name="keywords" content="<?php echo e($setting->meta_keywords); ?>">
+    <meta name="description" content="<?php echo e($setting->meta_description); ?>">
+<?php $__env->stopSection(); ?>
 
-    @php
+<?php $__env->startSection('content'); ?>
+
+    <?php
         function renderStarRating($rating, $maxRating = 5)
         {
             $fullStar = "<i class = 'far fa-star filled'></i>";
@@ -24,7 +24,7 @@
             $html = $html;
             return $html;
         }
-    @endphp
+    ?>
 
 
         <!-- start slider section -->
@@ -34,7 +34,7 @@
                     <div class="swiper-container full-screen md-h-700px sm-h-450px white-move swiper-light-pagination" data-slider-options='{ "slidesPerView": 1, "loop": true, "autoplay": { "delay": 4500, "disableOnInteraction": false },  "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
                         <div class="swiper-wrapper">
 
-                        <!--<div class="swiper-slide cover-background" style="background-image:url('{{ asset("assets/harrison/images/banner1.jpg") }}');">
+                        <!--<div class="swiper-slide cover-background" style="background-image:url('<?php echo e(asset("assets/harrison/images/banner1.jpg")); ?>');">
                                 <div class="container h-100">
                                     <div class="row h-100">
                                         <div class="col-12 col-xl-8 col-sm-6 d-flex flex-column justify-content-center h-100">
@@ -45,7 +45,7 @@
                                 </div>
                             </div>-->
                              <!-- start slider item -->
-                             <div class="swiper-slide cover-background" style="background-image:url('{{ asset('assets/harrison/images/slider-2.jpg') }}');">
+                             <div class="swiper-slide cover-background" style="background-image:url('<?php echo e(asset('assets/harrison/images/slider-2.jpg')); ?>');">
                                 <div class="container h-100">
                                     <div class="row h-100">
                                         <div class="col-12 col-xl-8 col-sm-6 d-flex flex-column justify-content-center h-100">
@@ -57,7 +57,7 @@
                             </div>
                             <!-- end slider item -->
                             <!-- start slider item -->
-                            <div class="swiper-slide cover-background" style="background-image:url('{{ asset('assets/harrison/images/slider-1.jpg') }}');">
+                            <div class="swiper-slide cover-background" style="background-image:url('<?php echo e(asset('assets/harrison/images/slider-1.jpg')); ?>');">
                                 
                                 <div class="container h-100">
                                     <div class="row h-100">
@@ -93,12 +93,12 @@
                         <div class="swiper-wrapper">
                             <!-- start slider item -->
                             <div class="swiper-slide">
-                                <img src="{{ asset('assets/images/mobile-slider-1.png') }}">
+                                <img src="<?php echo e(asset('assets/images/mobile-slider-1.png')); ?>">
                             </div>
                             <!-- end slider item -->
                             <!-- start slider item -->
                             <div class="swiper-slide">
-                                <img src="{{ asset('assets/images/mobile-slider-2.png') }}">
+                                <img src="<?php echo e(asset('assets/images/mobile-slider-2.png')); ?>">
                             </div>
                             <!-- end slider item -->
                         </div>
@@ -138,10 +138,10 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-12 col-lg-6 col-md-10 margin-twenty-five-top lg-margin-30px-top md-margin-9-rem-bottom sm-margin-9-rem-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <div class="position-absolute right-15px bottom-0px w-65 lg-bottom-minus-50px xs-bottom-minus-25px" data-parallax-layout-ratio="1.1">
-                            <img src="{{ asset('assets/harrison/images/about.jpg') }}" alt="" />
+                            <img src="<?php echo e(asset('assets/harrison/images/about.jpg')); ?>" alt="" />
                         </div>
                         <div class="w-50 overflow-hidden position-relative md-w-70">
-                            <img src="{{ asset('assets/harrison/images/about1.jpg') }}" alt="" />
+                            <img src="<?php echo e(asset('assets/harrison/images/about1.jpg')); ?>" alt="" />
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 offset-lg-1 col-md-10 wow animate__fadeIn home_ab_right_cont" data-wow-delay="0.4s">
@@ -149,7 +149,7 @@
                         <h5 class="alt-font text-uppercase text-extra-dark-gray font-weight-700 w-85 margin-30px-bottom xl-w-100">Pioneers in the Lock & Hardware Industry in India</h5>
                         <p class="w-75 xl-w-100"><span class="se">Quality at its core</span> Our R & D department is always at work to improve quality, looks and style.</p>
                         <p class="w-75 xl-w-100"><span class="se">Brand leader in the segment over 6 decades</span> Thanks to the trust shown by our customers over these years. We look forward to a longer journey ahead with you!</p>
-                        <a href="{{ url('corporate-overview') }}" class="btn btn-fancy btn-large btn-dark-gray margin-20px-top">Read More</a>
+                        <a href="<?php echo e(url('corporate-overview')); ?>" class="btn btn-fancy btn-large btn-dark-gray margin-20px-top">Read More</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
                                  
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/door-handle.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/door-handle.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -201,7 +201,7 @@
                             <li class="grid-item photography wow animate__fadeIn">                               
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/cabinet-pull-handles.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/cabinet-pull-handles.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -223,7 +223,7 @@
                             <li class="grid-item logos web photography wow animate__fadeIn">                               
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/mortise-lock.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/mortise-lock.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -245,7 +245,7 @@
                             <li class="grid-item grid-item-double branding photography web wow animate__fadeIn">
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/cylinders.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/cylinders.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -267,7 +267,7 @@
                             <li class="grid-item logos photography wow animate__fadeIn">                                 
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/main-door-lock.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/main-door-lock.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -290,7 +290,7 @@
                                 
                                     <div class="portfolio-box">
                                         <div class="portfolio-image">
-                                            <img src="{{ asset('assets/harrison/images/godwn-shutter.jpg') }}" alt="" />
+                                            <img src="<?php echo e(asset('assets/harrison/images/godwn-shutter.jpg')); ?>" alt="" />
                                             <div class="portfolio-hover justify-content-end d-flex flex-column">
                                                 <div
                                                     class="bg-white padding-30px-lr padding-15px-tb w-100 d-flex align-items-center align-self-end text-left border-radius-3px xl-padding-20px-lr">
@@ -324,7 +324,7 @@
                     <div class="col-12 col-lg-4 col-sm-8 text-center text-lg-left md-margin-5-rem-bottom wow animate__fadeIn" data-wow-delay="0.2s">
                         <h5 class="alt-font font-weight-700 text-uppercase text-extra-dark-gray letter-spacing-minus-1px m-0">Planning your new home or renovating the old one?</h5>
                         <p>Let us help you execute it in a better way. The idea is to connect you with one of our experts to get your dream home become a reality! Choose from one of our empanelled architect/Interior designer today!</p>
-                        <a href="{{ url('architect-and-designer-connect') }}" class="btn btn-fancy btn-large btn-dark-gray margin-20px-top">connect with an architect</a>
+                        <a href="<?php echo e(url('architect-and-designer-connect')); ?>" class="btn btn-fancy btn-large btn-dark-gray margin-20px-top">connect with an architect</a>
                     </div>
                     <div class="col-12 col-xl-7 offset-xl-1 col-lg-8 wow animate__fadeInRight" data-wow-delay="0.4s">
                         <div class="swiper-simple-arrow-style-1">
@@ -334,7 +334,7 @@
                                     <div class="swiper-slide text-center">
                                         <div class="feature-box feature-box-left-icon-middle">
                                             <div class="feature-box-icon margin-50px-right xs-margin-15px-right">
-                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="{{ asset('assets/harrison/images/home-interior-design-testimonial-img03.jpg') }}" alt=""/>
+                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="<?php echo e(asset('assets/harrison/images/home-interior-design-testimonial-img03.jpg')); ?>" alt=""/>
                                             </div>
                                             <div class="feature-box-content">
                                                 <p class="w-85 lg-w-100">Over 15-year-extensive professional experience in designing and managing varied array of different types of USA and International projects.</p>
@@ -348,7 +348,7 @@
                                     <div class="swiper-slide text-center">
                                         <div class="feature-box feature-box-left-icon-middle">
                                             <div class="feature-box-icon margin-50px-right xs-margin-15px-right">
-                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="{{ asset('assets/harrison/images/home-interior-design-testimonial-img02.jpg') }}" alt=""/>
+                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="<?php echo e(asset('assets/harrison/images/home-interior-design-testimonial-img02.jpg')); ?>" alt=""/>
                                             </div>
                                             <div class="feature-box-content">
                                                 <p class="w-85 lg-w-100"> Proficient in AutoCAD, REVIT, Photoshop, InDesign, Illustrator, Microsoft Word and PowerPoint.</p>
@@ -362,7 +362,7 @@
                                     <div class="swiper-slide text-center">
                                         <div class="feature-box feature-box-left-icon-middle">
                                             <div class="feature-box-icon margin-50px-right xs-margin-15px-right">
-                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="{{ asset('assets/harrison/images/home-interior-design-testimonial-img03.jpg') }}" alt=""/>
+                                                <img class="rounded-circle w-180px h-180px sm-w-150px sm-h-150px xs-w-80px xs-h-80px" src="<?php echo e(asset('assets/harrison/images/home-interior-design-testimonial-img03.jpg')); ?>" alt=""/>
                                             </div>
                                             <div class="feature-box-content">
                                                 <p class="w-85 lg-w-100">Their team are easy to work with and helped me make amazing websites in a short amount of time. Thanks guys for all your hard work. Professional support.</p>
@@ -409,7 +409,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/ball-bearing.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/ball-bearing.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">2-Ball Bearing Butt Hinges</div>
@@ -419,7 +419,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/caninet-handle.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/caninet-handle.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Caninet Handle</div>
@@ -431,7 +431,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/door-closer.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/door-closer.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Door Closer</div>
@@ -442,7 +442,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/door-handle.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/door-handle.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Door Handle</div>
@@ -454,7 +454,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/furniture-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/furniture-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Furniture Lock</div>
@@ -465,7 +465,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/handle-set.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/handle-set.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Handle Set</div>
@@ -476,7 +476,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/hydraulic-hinges.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/hydraulic-hinges.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Hydraulic Hinges</div>
@@ -489,7 +489,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/maindoor-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/maindoor-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Maindoor lock</div>
@@ -502,7 +502,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/padlock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/padlock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Padlock</div>
@@ -515,7 +515,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/premium-products/tower-bolt.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/premium-products/tower-bolt.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Tower Bolt</div>
@@ -538,7 +538,7 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col-12 text-center overlap-gap-section overlap-height">
-                        <img src="{{ asset('assets/harrison/images/who-we-are-image-2.jpg') }}" alt="" data-no-retina="">
+                        <img src="<?php echo e(asset('assets/harrison/images/who-we-are-image-2.jpg')); ?>" alt="" data-no-retina="">
                     </div>
                 </div>
             </div>
@@ -590,7 +590,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/4-ball-bearing-butt-hinges.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/4-ball-bearing-butt-hinges.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">4-Ball Bearing Butt Hinges</div>
@@ -600,7 +600,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/auto-close-concealed-hinges.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/auto-close-concealed-hinges.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Auto Close Concealed Hinges</div>
@@ -612,7 +612,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/center-shutter-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/center-shutter-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Center Shutter Lock</div>
@@ -623,7 +623,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/door-closer.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/door-closer.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Door Closer</div>
@@ -635,7 +635,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/door-handle.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/door-handle.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Door Handle</div>
@@ -647,7 +647,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/door-handle-set.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/door-handle-set.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Door Handle Set</div>
@@ -659,7 +659,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/door-stopper.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/door-stopper.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Door Stopper</div>
@@ -671,7 +671,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/main-door-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/main-door-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">main door lock</div>
@@ -684,7 +684,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/pad-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/pad-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Pad lock</div>
@@ -696,7 +696,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/pro-soft-slide.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/pro-soft-slide.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">Pro Soft Slide</div>
@@ -708,7 +708,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/screws.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/screws.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Screws</div>
@@ -720,7 +720,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/side-shutter-loc.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/side-shutter-loc.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                            <div class="move-btn">side shutter lock</div>
@@ -732,7 +732,7 @@
                                     <div class="swiper-slide text-center padding-15px-all">
                                         <div
                                             class="feature-box-show-hover box-shadow-small-hover feature-box-bg-white-hover img-radius">
-                                            <img src="{{ asset('assets/harrison/images/feature-product/soft-touch-lock.jpg') }}">
+                                            <img src="<?php echo e(asset('assets/harrison/images/feature-product/soft-touch-lock.jpg')); ?>">
                                         </div>
                                         <div class="move-bottom-top margin-15px-top">
                                             <div class="move-btn">Soft Touch Lock</div>
@@ -765,7 +765,7 @@
                             <li class="grid-item wow animate__fadeIn">
                                 <div class="blog-post border-radius-5px bg-white box-shadow-medium">
                                     <div class="blog-post-image bg-medium-slate-blue">
-                                        <a href="https://timesofindia.indiatimes.com/harrison-locks-expanding-in-modular-kitchen-builder-hardware-biz-eyes-rs-150-cr-turnover-by-2025/articleshow/91470049.cms" target="_blank" title=""><img src="{{ asset('assets/harrison/images/home-blog-1.jpg') }}" alt=""></a>
+                                        <a href="https://timesofindia.indiatimes.com/harrison-locks-expanding-in-modular-kitchen-builder-hardware-biz-eyes-rs-150-cr-turnover-by-2025/articleshow/91470049.cms" target="_blank" title=""><img src="<?php echo e(asset('assets/harrison/images/home-blog-1.jpg')); ?>" alt=""></a>
                                         <!-- <a href="blog-masonry.html" class="blog-category alt-font">Blog 1</a> -->
                                     </div>
                                     <div class="post-details padding-3-rem-lr padding-2-half-rem-tb">
@@ -785,7 +785,7 @@
                             <li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s">
                                 <div class="blog-post border-radius-5px bg-white box-shadow-medium">
                                     <div class="blog-post-image bg-medium-slate-blue">
-                                        <a href="https://www.forbesindia.com/article/brand-connect/three-generations-of-market-leadership-by-harrison/61587/1" target="_blank"  title=""><img src="{{ asset('assets/harrison/images/home-blog-2.jpg') }}" target="_blank" alt=""></a>
+                                        <a href="https://www.forbesindia.com/article/brand-connect/three-generations-of-market-leadership-by-harrison/61587/1" target="_blank"  title=""><img src="<?php echo e(asset('assets/harrison/images/home-blog-2.jpg')); ?>" target="_blank" alt=""></a>
                                         <!-- <a href="javascript:void(0)" class="blog-category alt-font">Blog 2</a> -->
                                     </div>
                                     <div class="post-details padding-3-rem-lr padding-2-half-rem-tb">
@@ -805,7 +805,7 @@
                             <li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s">
                                 <div class="blog-post border-radius-5px bg-white box-shadow-medium">
                                     <div class="blog-post-image bg-medium-slate-blue">
-                                        <a href="https://timesofindia.indiatimes.com/city/delhi/harrison-locks-forays-in-new-areas-eyes-rs500cr-revenue-by20/articleshow/53582898.cms" target="_blank" title=""><img src="{{ asset('assets/harrison/images/home-blog-3.jpg') }}" alt=""></a>
+                                        <a href="https://timesofindia.indiatimes.com/city/delhi/harrison-locks-forays-in-new-areas-eyes-rs500cr-revenue-by20/articleshow/53582898.cms" target="_blank" title=""><img src="<?php echo e(asset('assets/harrison/images/home-blog-3.jpg')); ?>" alt=""></a>
                                         <!-- <a href="blog-masonry.html" class="blog-category alt-font">Blog 3</a> -->
                                     </div>
                                     <div class="post-details padding-3-rem-lr padding-2-half-rem-tb">
@@ -883,7 +883,7 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <figure class="address_cont"
-                            style="background-image: url({{ asset('assets/harrison/images/lock-blur-bg.jpg') }}); background-position: center center; background-size: cover; background-repeat: no-repeat; text-align: center;">
+                            style="background-image: url(<?php echo e(asset('assets/harrison/images/lock-blur-bg.jpg')); ?>); background-position: center center; background-size: cover; background-repeat: no-repeat; text-align: center;">
                             <div class="view_all">
                                 <a href="javascript:void(0)">View All Listing</a>
                             </div>
@@ -895,5 +895,7 @@
         </section>
         <!-- end section --> 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/themes/theme1.blade.php ENDPATH**/ ?>

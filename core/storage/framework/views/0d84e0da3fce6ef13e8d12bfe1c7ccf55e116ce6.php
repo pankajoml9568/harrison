@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('meta'); ?>
 <meta name="keywords" content="<?php echo e($setting->meta_keywords); ?>">
 <meta name="description" content="<?php echo e($setting->meta_description); ?>">
@@ -38,13 +39,13 @@
             </div>
             <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="bg-white box-shadow-large border-radius-6px padding-3-rem-tb padding-3-rem-lr sm-padding-5-rem-all xs-padding-3-half-rem-lr xs-padding-6-rem-tb xs-no-border-radius">
-                    <form id="project-contact-form" class="needs-validation" method="Post" action="<?php echo e(route('form.architect-designer-connect.save')); ?>" novalidate>
+                    <form id="project-contact-form" method="Post" action="<?php echo e(route('form.architect-designer-connect.save')); ?>">
                     <?php echo csrf_field(); ?>
                         <!-- <div class="row row-cols-1 row-cols-md-2"> -->
                         <div class="">
                             <!-- <div class="col margin-4-rem-bottom sm-margin-25px-bottom"> -->
-                                <input class="form-control medium-input bg-white required" name="name" type="text" id="name"
-                            placeholder="<?php echo e(__('Your Name *')); ?>" value="<?php echo e(old('name')); ?>" required>
+                                <input class="medium-input bg-white required" name="name" type="text" id="name"
+                            placeholder="<?php echo e(__('Your Name')); ?>" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -56,8 +57,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
-                                <input class="form-control medium-input bg-white required" type="email" name="email" id="email"
-                            placeholder="<?php echo e(__('Your E-mail address *')); ?>" value="<?php echo e(old('email')); ?>" required>
+                                <input class="medium-input bg-white required" type="email" name="email" id="email"
+                            placeholder="<?php echo e(__('Your E-mail address')); ?>" value="<?php echo e(old('email')); ?>">
                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -69,8 +70,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
-                                <input class="form-control medium-input bg-white " type="text" name="state" id="contact-state"
-                            placeholder="<?php echo e(__('State *')); ?>" value="<?php echo e(old('state')); ?>" required>
+                                <input class="medium-input bg-white " type="text" name="state" id="contact-state"
+                            placeholder="<?php echo e(__('State')); ?>" value="<?php echo e(old('state')); ?>">
                             <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -82,8 +83,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
-                                <input class="form-control medium-input bg-white " type="text" name="city" id="contact-city"
-                            placeholder="<?php echo e(__('City *')); ?>" value="<?php echo e(old('city')); ?>" required>
+                                <input class="medium-input bg-white " type="text" name="city" id="contact-city"
+                            placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>">
                             <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -96,8 +97,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             <!-- </div> -->
                             <!-- <div class="col margin-4-rem-bottom sm-margin-20px-bottom"> -->
-                                <select class="select form-control" required>
-                                    <option value="">Design/Plans *</option>
+                                <select class="select">
+                                    <option value="">Design/Plans</option>
                                     <option <?php echo e(old('design_plans') == "Permits" ? "selected" : ""); ?> value="Permits">Permits</option>
                                     <option <?php echo e(old('design_plans') == "Construction Managment" ? "selected" : ""); ?> value="Construction Managment">Construction Managment</option>
                                     <option <?php echo e(old('design_plans') == "Consulting" ? "selected" : ""); ?> value="Consulting">Consulting</option>
@@ -127,9 +128,9 @@ unset($__errorArgs, $__bag); ?>
                                 <?php endif; ?>
                             </div>
                             <?php endif; ?>
-                            <div class="col text-left sm-margin-20px-bottom">
+                            <div class="col text-left sm-margin-20px-bottom" style="margin-bottom:23px">
                                 <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-10px-right margin-5px-top required">
-                                <label for="terms_condition" class="text-small d-inline-block align-top w-85 md-w-90 xs-w-85">I accept the terms &amp; conditions and I understand that my data will be hold securely in accordance with the <a href="privacy.html" target="_blank" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
+                                <label for="terms_condition" class="text-small d-inline-block align-top w-85 md-w-90 xs-w-85">I accept the terms &amp; conditions and I understand that my data will be hold securely in accordance with the <a href="<?php echo e(url('privacy-policy')); ?>" class="text-decoration-underline text-extra-dark-gray">privacy policy</a>.</label>
                             </div>
                             <div class="col text-center text-md-right mt-2">
                                 <button id="project-contact-us-button" class="btn btn-medium btn-fancy btn-gradient-sky-blue-pink mb-0" type="submit">Register Now</button>
@@ -142,4 +143,4 @@ unset($__errorArgs, $__bag); ?>
     </div>
 </section>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/harrison/core/resources/views/front/forms/architect-designer-connect.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('master.front', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\www\harrison\core\resources\views/front/forms/architect-designer-connect.blade.php ENDPATH**/ ?>

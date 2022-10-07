@@ -18,7 +18,7 @@
             <div class="container">
                 <div class="row justify-content-center wow animate__fadeIn">
                     <div class="col-12 col-lg-8 col-sm-10 text-center margin-5-rem-bottom md-margin-3-rem-bottom xs-margin-5-rem-bottom">
-                        <h5 class="alt-font font-weight-600 text-extra-dark-gray d-inline-block">Current Opening</h5>
+                        <h5 class="alt-font font-weight-600 text-extra-dark-gray d-inline-block">Current Opening(s)</h5>
                     </div>
                 </div>
 
@@ -66,12 +66,11 @@
                                         <!-- start modal pop-up -->
                                         <div id="modal-popup2" class="zoom-anim-dialog col-11 col-xl-6 col-lg-6 col-md-8 col-sm-9 mx-auto bg-white text-center modal-popup-main padding-2-half-rem-all mfp-hide border-radius-6px sm-padding-2-half-rem-lr">
                                             
-                                            <form class="row mt-2" method="Post" action="<?php echo e(route('form.career.submit')); ?>" enctype="multipart/form-data">
+                                            <form class="row mt-2 needs-validation" method="Post" action="<?php echo e(route('form.career.submit')); ?>" enctype="multipart/form-data" novalidate>
                                                 <?php echo csrf_field(); ?>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="name"><?php echo e(__('Full Name')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="name" type="text" id="name" placeholder="<?php echo e(__('Full Name')); ?>"  value="<?php echo e(old('name')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="name" type="text" id="name" placeholder="<?php echo e(__('Full Name *')); ?>"  value="<?php echo e(old('name')); ?>" required>
                                                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -86,8 +85,7 @@ unset($__errorArgs, $__bag); ?>
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-email"><?php echo e(__('E-mail address')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="email" name="email" id="contact-email" placeholder="<?php echo e(__('E-mail address')); ?>"  value="<?php echo e(old('email')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="email" name="email" id="contact-email" placeholder="<?php echo e(__('E-mail address *')); ?>"  value="<?php echo e(old('email')); ?>" required>
                                                         <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -102,8 +100,7 @@ unset($__errorArgs, $__bag); ?>
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-tel"><?php echo e(__('Mobile Number')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="mobile" id="contact-tel" placeholder="<?php echo e(__('Mobile Number')); ?>"  value="<?php echo e(old('mobile')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="mobile" id="contact-tel" placeholder="<?php echo e(__('Mobile Number *')); ?>"  value="<?php echo e(old('mobile')); ?>" required>
                                                         <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -118,8 +115,7 @@ unset($__errorArgs, $__bag); ?>
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-dob"><?php echo e(__('Date of Birth')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="date" name="dob" id="contact-dob" placeholder="<?php echo e(__('Date of Birth')); ?>"  value="<?php echo e(old('dob')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="date" name="dob" id="contact-dob" placeholder="<?php echo e(__('Date of Birth *')); ?>"  value="<?php echo e(old('dob')); ?>" required>
                                                         <?php $__errorArgs = ['dob'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -135,9 +131,8 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-gender"><?php echo e(__('Gender')); ?></label>
-                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="gender" id="contact-gender">
-                                                                <option value="">--- Gender ---</option>
+                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="gender" id="contact-gender" required>
+                                                                <option value="">--- Gender *---</option>
                                                                 <option <?php echo e(old('gender') == "Male" ? "selected" : ""); ?> value="Male">Male</option>
                                                                 <option <?php echo e(old('gender') == "Female" ? "selected" : ""); ?> value="Female">Female</option>
                                                                 
@@ -157,9 +152,8 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-country"><?php echo e(__('Country')); ?></label>
-                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="country" id="contact-country">
-                                                                <option value="">--- Country ---</option>
+                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="country" id="contact-country" required>
+                                                                <option value="">--- Country *---</option>
                                                                 <option <?php echo e(old('country') == "India" ? "selected" : ""); ?> value="India">India</option>
                                                                 
                                                             </select>
@@ -178,8 +172,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-state"><?php echo e(__('State')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="state" id="contact-state" placeholder="<?php echo e(__('State')); ?>"  value="<?php echo e(old('state')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="state" id="contact-state" placeholder="<?php echo e(__('State *')); ?>"  value="<?php echo e(old('state')); ?>" required>
                                                         <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -195,8 +188,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-city"><?php echo e(__('City')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="city" id="contact-city" placeholder="<?php echo e(__('City')); ?>"  value="<?php echo e(old('city')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="city" id="contact-city" placeholder="<?php echo e(__('City *')); ?>"  value="<?php echo e(old('city')); ?>" required>
                                                         <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -212,8 +204,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-apply_for"><?php echo e(__('Resume Description')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="apply_for" id="contact-apply_for" placeholder="<?php echo e(__('Apply For')); ?>"  value="<?php echo e(old('apply_for')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="apply_for" id="contact-apply_for" placeholder="<?php echo e(__('Apply For *')); ?>"  value="<?php echo e(old('apply_for')); ?>" required>
                                                         <?php $__errorArgs = ['apply_for'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -229,9 +220,8 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-highest_education"><?php echo e(__('Highest Education')); ?></label>
-                                                            <select class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="highest_education" id="contact-highest_education">
-                                                                <option value="">--- Highest Education ---</option>
+                                                            <select class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" name="highest_education" id="contact-highest_education" required>
+                                                                <option value="">--- Highest Education *---</option>
                                                                 <option <?php echo e(old('highest_education') == "12th" ? "selected" : ""); ?> value="12th">12th</option>
                                                                 
                                                             </select>
@@ -250,8 +240,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-total_experince"><?php echo e(__('Total Experience')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="total_experince" id="contact-total_experince" placeholder="<?php echo e(__('Total Experience')); ?>"  value="<?php echo e(old('total_experince')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="total_experince" id="contact-total_experince" placeholder="<?php echo e(__('Total Experience *')); ?>"  value="<?php echo e(old('total_experince')); ?>" required>
                                                         <?php $__errorArgs = ['total_experince'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -267,8 +256,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-prefered_location"><?php echo e(__('Prefered Location')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="prefered_location" id="contact-prefered_location" placeholder="<?php echo e(__('Prefered Location')); ?>"  value="<?php echo e(old('prefered_location')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="prefered_location" id="contact-prefered_location" placeholder="<?php echo e(__('Prefered Location *')); ?>"  value="<?php echo e(old('prefered_location')); ?>" required>
                                                         <?php $__errorArgs = ['prefered_location'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -284,8 +272,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-current_designation"><?php echo e(__('Current Designation')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_designation" id="contact-current_designation" placeholder="<?php echo e(__('Current Designation')); ?>"  value="<?php echo e(old('current_designation')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_designation" id="contact-current_designation" placeholder="<?php echo e(__('Current Designation *')); ?>"  value="<?php echo e(old('current_designation')); ?>" required>
                                                         <?php $__errorArgs = ['current_designation'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -301,8 +288,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-current_employer"><?php echo e(__('Current Employer')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_employer" id="contact-current_employer" placeholder="<?php echo e(__('Current Employer')); ?>"  value="<?php echo e(old('current_employer')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_employer" id="contact-current_employer" placeholder="<?php echo e(__('Current Employer *')); ?>"  value="<?php echo e(old('current_employer')); ?>" required>
                                                         <?php $__errorArgs = ['current_employer'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -318,8 +304,7 @@ unset($__errorArgs, $__bag); ?>
 
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="contact-current_annual_ctc"><?php echo e(__('Current Annual CTC')); ?></label>
-                                                        <input class="input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_annual_ctc" id="contact-current_annual_ctc" placeholder="<?php echo e(__('Current Annual CTC')); ?>"  value="<?php echo e(old('current_annual_ctc')); ?>">
+                                                        <input class="form-control input-border-bottom border-color-black-transparent bg-transparent px-0 border-radius-0px" type="text" name="current_annual_ctc" id="contact-current_annual_ctc" placeholder="<?php echo e(__('Current Annual CTC *')); ?>"  value="<?php echo e(old('current_annual_ctc')); ?>" required>
                                                         <?php $__errorArgs = ['current_annual_ctc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -334,7 +319,6 @@ unset($__errorArgs, $__bag); ?>
                                                 </div>
                                                 <div class="col-md-6 text-left">
                                                     <div class="form-group">
-                                                        <label for="resume"><?php echo e(__('Attech Resume')); ?></label>
                                                         <input type="file" class="form-control-file" name="resume" id="resume">
                                                         <?php $__errorArgs = ['resume'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

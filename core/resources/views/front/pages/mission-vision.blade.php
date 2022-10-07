@@ -67,7 +67,7 @@ Our mission and Vission
 <!-- end section -->
 
 <!-- start section -->
-<section class="position-relative pb-0 overflow-visible wow animate__fadeIn pb-5 mb-5 bg1-a" data-wow-delay="0.4s">
+<section class="position-relative pb-0 overflow-visible wow animate__fadeIn pb-5 mb-0 bg1-a" data-wow-delay="0.4s">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-12 col-lg-6 margin-70px-top lg-margin-30px-top md-margin-50px-bottom">

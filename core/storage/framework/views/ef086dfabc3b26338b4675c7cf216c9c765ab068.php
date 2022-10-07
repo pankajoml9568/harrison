@@ -133,12 +133,12 @@
                             </div>
                             <div class="col-12">
                                 <!-- start contact form -->
-                                <form class="row mt-2" method="Post" action="<?php echo e(route('form.become-a-associate.save')); ?>">
+                                <form class="row mt-2 needs-validation" method="Post" action="<?php echo e(route('form.become-a-associate.save')); ?>" novalidate>
                                     <?php echo csrf_field(); ?>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" name="first_name" type="text" id="first-name"
-                                                placeholder="<?php echo e(__('First Name')); ?>" value="<?php echo e(old('first_name')); ?>">
+                                            <input class="form-control medium-input bg-white" name="first_name" type="text" id="first-name"
+                                                placeholder="<?php echo e(__('First Name *')); ?>" value="<?php echo e(old('first_name')); ?>" required>
                                             <?php $__errorArgs = ['first_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -153,7 +153,7 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" name="last_name" type="text" id="last-name"
+                                            <input class="form-control medium-input bg-white" name="last_name" type="text" id="last-name"
                                                 placeholder="<?php echo e(__('Last Name')); ?>" value="<?php echo e(old('last_name')); ?>">
                                             <?php $__errorArgs = ['last_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -169,8 +169,8 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="email" name="email" id="contact-email"
-                                                placeholder="<?php echo e(__('E-mail')); ?>" value="<?php echo e(old('email')); ?>">
+                                            <input class="form-control medium-input bg-white" type="email" name="email" id="contact-email"
+                                                placeholder="<?php echo e(__('E-mail *')); ?>" value="<?php echo e(old('email')); ?>" required>
                                             <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -185,8 +185,8 @@ unset($__errorArgs, $__bag); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="phone" id="contact-tel"
-                                                placeholder="<?php echo e(__('Phone')); ?>" value="<?php echo e(old('phone')); ?>">
+                                            <input class="form-control medium-input bg-white" type="text" name="phone" id="contact-tel"
+                                                placeholder="<?php echo e(__('Phone *')); ?>" value="<?php echo e(old('phone')); ?>" required>
                                             <?php $__errorArgs = ['phone'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -202,8 +202,8 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="state" id="contact-state"
-                                                placeholder="<?php echo e(__('State')); ?>" value="<?php echo e(old('state')); ?>">
+                                            <input class="form-control medium-input bg-white" type="text" name="state" id="contact-state"
+                                                placeholder="<?php echo e(__('State *')); ?>" value="<?php echo e(old('state')); ?>" required>
                                             <?php $__errorArgs = ['state'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -219,8 +219,8 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="medium-input bg-white" type="text" name="city" id="contact-city"
-                                                placeholder="<?php echo e(__('City')); ?>" value="<?php echo e(old('city')); ?>">
+                                            <input class="form-control medium-input bg-white" type="text" name="city" id="contact-city"
+                                                placeholder="<?php echo e(__('City *')); ?>" value="<?php echo e(old('city')); ?>" required>
                                             <?php $__errorArgs = ['city'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -237,7 +237,7 @@ unset($__errorArgs, $__bag); ?>
 
                                     <div class="col-12  ">
                                         <div class="form-group">
-                                            <select class="" name="i_am_a" id="i_am_a">
+                                            <select class="form-control" name="i_am_a" id="i_am_a" required>
                                                 <option <?php echo e(old('i_am_a') == "Architect" ? "selected" : ""); ?> value="Architect">Architect</option>
                                                 <option <?php echo e(old('i_am_a') == "Interior designer" ? "selected" : ""); ?> value="Interior designer">Interior designer</option>
                                                 <option <?php echo e(old('i_am_a') == "Contractor" ? "selected" : ""); ?> value="Contractor">Contractor</option>
